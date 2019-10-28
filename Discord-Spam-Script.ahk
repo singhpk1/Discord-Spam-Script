@@ -15,15 +15,15 @@ If SpamLoop {
     return
 }
 SpamLoop := True
-Loop {                      ; Add a number after "Loop" if you want it to loop a specific number of times
-    Loop 9 {                ; The amount of messages it sends before waiting (default = 9)
+Loop { 100000000000                     ; Add a number after "Loop" if you want it to loop a specific number of times
+    Loop 1000 {                ; The amount of messages it sends before waiting (default = 9)
         SendInput :smiley:   ; Change ":smiley:" to whatever you want
         SendInput {Enter}
         Sleep, 800
         if not SpamLoop
             break
     }
-    Sleep, 5000             ; How long in milliseconds it will wait before it starts sending messages again
+    Sleep, 0             ; How long in milliseconds it will wait before it starts sending messages again
     if not SpamLoop
         break
 }
